@@ -76,4 +76,58 @@ li {
   text-align: left;
   position: relative;
   padding: 0.5rem;
+  flex: 1;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  cursor: grab;
+}
+
+.todo-item:active {
+  cursor: grabbing;
+}
+
+.edit-btn,
+.delete-btn {
+  border: none;
+  font-family: "Architects Daughter", cursive;
+  font-size: 1rem;
+  color: hsl(198, 1%, 29%);
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+.edit-btn {
+  background: transparent;
+}
+
+.delete-btn {
+  background: transparent;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+  color: #d63031;
+}
+
+.edit-input {
+  flex: 1;
+  font: inherit;
+  text-align: left;
+  padding: 0.5rem;
+  margin: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
 }

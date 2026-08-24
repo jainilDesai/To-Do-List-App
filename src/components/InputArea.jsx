@@ -8,15 +8,22 @@ function InputArea(props) {
     setInputText(newValue);
   }
 
+  function submit() {
+    props.addItem(inputText);
+    setInputText("");
+  }
+
   return (
     <div className="form">
-      <input onChange={handleChange} type="text" value={inputText} />
-      <button
-        onClick={() => {
-          props.addItem(inputText);
-          setInputText("");
+      <input
+        onChange={handleChange}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") submit();
         }}
-      >
+        type="text"
+        value={inputText}
+      />
+      <button onClick={submit}>
         <span>Add</span>
       </button>
     </div>
